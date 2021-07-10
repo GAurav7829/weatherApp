@@ -6,6 +6,8 @@ import {
   CardTitle, CardSubtitle, Container, Table,
   InputGroup, InputGroupAddon, Input, Button
 } from 'reactstrap';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const appid = '5df806a025e90ac22a0bedc34953c5fe';
 
@@ -66,6 +68,14 @@ function App() {
                     <tr>
                       <th scope="row">wind</th>
                       <td>{weatherData.wind ? `${weatherData.wind.speed} Km/H, ${weatherData.wind.deg}°` : "no data"}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sunrise</th>
+                      <td><Moment unix format="hh:mm:ss" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunrise : ''}</Moment></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sunset</th>
+                      <td><Moment unix format="hh:mm:ss" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunset : ''}</Moment></td>
                     </tr>
                   </tbody>
                 </Table>
