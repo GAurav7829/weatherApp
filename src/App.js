@@ -71,11 +71,11 @@ function App() {
                     </tr>
                     <tr>
                       <th scope="row">Sunrise</th>
-                      <td><Moment unix format="hh:mm:ss" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunrise : ''}</Moment></td>
+                      <td><Moment unix format="h:mm:ss a" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunrise : ''}</Moment></td>
                     </tr>
                     <tr>
                       <th scope="row">Sunset</th>
-                      <td><Moment unix format="hh:mm:ss" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunset : ''}</Moment></td>
+                      <td><Moment unix format="h:mm:ss a" tz={weatherData.sys ? weatherData.sys.country : ''}>{weatherData.sys ? weatherData.sys.sunset : ''}</Moment></td>
                     </tr>
                   </tbody>
                 </Table>
